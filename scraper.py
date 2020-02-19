@@ -36,6 +36,7 @@ class MeqasaScraper():
                     other_flattened_data.append(i)
 
                 self.data.append([prices, other_flattened_data])
+            print(f"Scraped page {i}")
 
         for _ in self.data:
             for i in zip(_[0], f"{_[1]}"):
@@ -49,6 +50,7 @@ class MeqasaScraper():
             for line in iterable:
                 file.write(str(line))
                 file.write('\n')
+                print("Wrote line to file")
 
 
 
