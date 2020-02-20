@@ -287,10 +287,6 @@ Cantonments
 2, 2
 
 
-Tudu
-
-<i>Price disclosed on request</i> <li class=bed><span></span></li>, <li class=shower><span></span></li>,
-<i>Price disclosed on request</i>
 
 
 
@@ -81126,8 +81122,7 @@ Dzorwulu>2 bedroom furnished 1 for rent at Dzorwulu, Ghana</a>
 
 
 Osu>1 for rent at Osu, Ghana</a>
-<i>Price disclosed on request</i> <li class=bed><span></span></li>, <li class=shower><span></span></li>,
-<i>Price disclosed on request</i>
+
 
 
 Adiringanor>3 bedroom 1 for rent at Adiringanor, Ghana</a>
@@ -82905,8 +82900,7 @@ Airport-Residential-Road>3 bedroom 1 for rent at Airport-Residential Road, Ghana
 
 
 North-Ridge>1 for rent at North Ridge, Ghana</a>
-<i>Price disclosed on request</i> <li class=bed><span></span></li>, <li class=shower><span></span></li>,
-<i>Price disclosed on request</i>
+
 
 
 Osu>Furnished 1 for rent at Osu, Ghana</a>

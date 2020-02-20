@@ -1,0 +1,262 @@
+Villagio
+19,036
+3, 3
+
+
+Cantonments
+14,685
+2, 2
+
+
+East-Legon
+16,317
+4, 4
+
+
+Airport-Residential
+19,036
+3, 3
+19,036
+
+
+Adenta
+4,335
+3, 3
+
+
+Ridge
+19,775
+4, 4
+
+
+Labadi
+435
+2, 2
+
+
+Roman-Ridge
+6,527
+3, 3
+
+
+East-Legon
+544
+2, 2
+
+
+Spintex
+3,000
+1, 1, 200 m
+
+
+Ashaley-Botwe
+326
+2, 3,434 m
+
+
+South-La
+7,071
+2, 2
+
+
+Ridge
+38,072
+5, 5
+
+
+East-Legon
+4,623
+2, 2 320 m
+
+
+East-Legon-Hills
+8,430
+2, 3
+8,430
+
+
+North-legon
+2,300
+2, 2
+
+
+Airport-Residential
+26,107
+3, 4 215 m
+
+
+Airport-Residential
+22,400
+3, 2
+
+
+Villagio
+16,317
+3, 3
+
+
+Labone
+6,799
+1, 1
+
+
+Cantonments
+15,229
+2, 2
+
+
+Mile-7
+1,400
+2, 2
+
+
+Airport-Residential-Hills
+11,000
+2, 2 110 m
+
+
+Community-25
+7,071
+3, 3
+7,071
+
+
+Airport-Residential
+16,317
+2, 3
+
+
+Cantonments
+13,597
+2, 2 140 m
+
+
+Kumasi
+2,312
+2, 2
+
+
+Airport-Residential
+19,036
+2, 2
+
+
+East-Legon
+8,158
+2, 2 100 m
+
+
+Cantonments
+12,509
+1, 1 90 m,
+12,509
+
+
+Cantonments
+17,948
+2, 3 141 m,
+17,948
+
+
+East-Airport-Residential
+10,878
+2, 3
+
+
+East-Legon
+2,200
+2, 2 180 m
+
+
+Kaneshie
+8,158
+5, 3
+8,158
+
+
+Cantonments
+11,966
+2, 2
+
+
+Shiashie
+544
+1, 1, 35 m<li class=reduced sl203 fav-icon><a data-target=#fav-modal data-toggle=modal href=>
+544
+
+
+Airport-Residential
+17,676
+3, 4
+17,676
+
+
+Cantonments
+10,878
+2, 2
+
+
+Airport-Residential-West
+13,597
+3, 3
+
+
+Cantonments
+14,685
+2, 2
+
+
+Kumasi
+1,200
+5, 5 30,000 m
+
+
+East-Legon
+13,597
+4, 5 700 m
+
+
+Cantonments
+13,597
+3, 3 230 m
+
+
+Cantonments
+19,036
+4, 4
+
+
+Cantonments
+12,509
+1, 1 45 m
+
+
+Ridge
+12,509
+2, 2
+12,509
+
+
+Ridge
+24,475
+4, 4
+
+
+Haatso
+67,986
+5, 4
+
+
+Cantonments
+8,158
+2, 3 180 m
+
+
+Airport-Residential
+11,000
+2, 2 170 m
+
+
+Cantonments
+19,036
+3, 3 160 m

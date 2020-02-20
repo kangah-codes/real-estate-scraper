@@ -91,9 +91,11 @@ class TonatonScraper():
 #property = soup.find_all('div', class_='one-featured-prop')
 
 #print(property)
-a = MeqasaScraper()
-a.scrape_meqasa_urls()
-a.write_data('data.txt', a.flattened_data)
+a = TonatonScraper()
+
+a.scrape_tonaton_urls()
+# a.scrape_meqasa_urls()
+# a.write_data('data.txt', a.flattened_data)
 
 #print(a.flattened_data)
 
