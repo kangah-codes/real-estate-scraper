@@ -1,0 +1,35 @@
+1,Teshie,2,1800.00
+1,Osu,2,9,605.00
+1,Adjiringanor,3,2,6,498.00
+1,Osu,2,1,11300.00
+1,Teshie,2,12000.00
+1,Dansoman,2,1,1300.00
+1,Teshie,2,11500.00
+1,Labone,2,1,16103.00
+1Cantonment,2,1,1430.00
+1,East Legon,2,1,12430.00
+1, McCarthy hill,2,1,2200.00
+1, East Legon2,1,2470.00
+1,Spintex,2,1,1200.00
+1,Kaneshie,2,1,1000.00
+1,Dansoman,3,2,1500.00
+1,Accra,3,2,600.00
+1,Nungua,7,3,31000.00
+1,East Legon,3,2,12500.00
+1,Airport,3,1,8800.00
+1,trassaco,3,2,4500.00
+1Trassaco,2,1,3600.00
+1,Accra,2,1,1100.00
+1,Airport,2,1,2500.00
+1,Accra,1,1,180.00
+1,Accra,2,1,600.00
+1,Accra,2,1,600.00
+1,Airport,3,2,2500.00
+1,Assylum down,1,1,1500.00
+1,Roman ridge,4,2,6600.00
+1,WestlandAccra,1,1,450.00
+1, Westland,1,1,400.00
+1,Roman Ridge,1,1,600.00
+1,Aplaku,2,1,500.00
+1,achimota,1,1,200.00
+1,1,1,150.00

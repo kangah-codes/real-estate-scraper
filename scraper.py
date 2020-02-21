@@ -106,6 +106,28 @@ class TonatonScraper():
 
             print(pages[0])
 
+class JijiScraper:
+    def __init__(self):
+        self.site = "https://jiji.com.gh/houses-apartments-for-rent"
+        self.page = None
+
+    def scrape(self):
+        self.page = requests.get(self.site)
+        soup = BeautifulSoup(self.page.content, 'html.parser')
+
+        items = soup.find_all('div', categoryslug_="houses-apartments-for-rent")
+        print(items)
+
+        for i in items:
+            print(i)
+            current = BeautifulSoup(str(i), 'html.parser')
+            name = current.find_all('div', class_="b-advert-title-inner")
+            price = current.find_all('div', class_="qa-advert-price")
+            specs = current.find_all('div', class_="b-list-advert__item-attr")
+            location = current.find_all('svg', class_="region")
+
+            print(name.text, price.text, specs, location.text)
+
 stack = []
 
 class LocantoScraper:
@@ -143,10 +165,11 @@ class LocantoScraper:
                         print(a)
 
         file.close()
-
-
-a = LocantoScraper()
+a = JijiScraper()
 a.scrape()
+
+# a = LocantoScraper()
+# a.scrape()
 #property = soup.find_all('div', class_='one-featured-prop')
 # a = JumiaScraper()
 # a.scrape()
