@@ -106,6 +106,8 @@ class TonatonScraper():
 
             print(pages[0])
 
+stack = []
+
 class LocantoScraper:
     def __init__(self):
         self.site = "https://accra.locanto.com.gh/Flats-for-Rent/301/"
@@ -118,40 +120,28 @@ class LocantoScraper:
         self.keys = ['title', 'details', 'price', 'location']
 
     def scrape(self):
-        with open('locanto_data.txt', 'w+', encoding='utf-8') as file:
-            with open('towns.csv') as towns:
-                towns_data = towns.readlines()
-                # for town_line in towns_data:
-                #     split = town_line.split(',')
-                #     town = split[0]
-                #     count = 0
-                #     for line in data:
-                #         if SequenceMatcher(None, town, line).ratio() >= 0.6:
-                #             stack.append(Item([split[1], split[3], split[4]]))
-                #             stack[-1].has_nodes = True
-                #             print(town, line)
-                for i in range(1, self.max_links):
-                    self.page = requests.get(self.site+f"{i}/")
-                    soup = BeautifulSoup(self.page.content, 'html.parser')
+        with open('locanto.txt', 'w+', encoding='utf-8') as file:
+            for i in range(1, self.max_links):
+                self.page = requests.get(self.site+f"{i}/")
+                soup = BeautifulSoup(self.page.content, 'html.parser')
 
-                    pages = soup.find_all('div', class_="resultMain")
+                pages = soup.find_all('div', class_="resultMain")
 
-                    for i in pages:
-                        for town_line in towns_data:
-                            split = town_line.split(',')
-                            current = BeautifulSoup(str(i), 'html.parser')
-                            name = current.find_all('a', class_="bp_ad__title_link")
-                            loc = current.find_all('div', class_="bp_ad__city")
-                            price = current.find_all('div', class_="bp_ad__price")
+                for i in pages:
+                    #print(f"At {i}\n")
+                    #for town_line in towns_data:
+                    # print(f"At {town_line}\n")
+                    # split = town_line.split(',')
+                    current = BeautifulSoup(str(i), 'html.parser')
+                    name = current.find_all('a', class_="bp_ad__title_link")
+                    loc = current.find_all('div', class_="bp_ad__city")
+                    price = current.find_all('div', class_="bp_ad__price")
 
-                            for item in zip(name, loc, price):
-                                if SequenceMatcher(None, split[0], item[0].text).ratio() >= 0.6:
-                                    for i in item[0].text:
-                                        try:
+                    for item in zip(name, loc, price):
+                        a = f"1,{item[0].text},{item[1].text},{item[2].text.replace('GH₵','')}\n"
+                        file.write(a)
+                        print(a)
 
-                                            file.write(f"1,{int(i)},{int(i)},{item[2].text.replace('GH₵','')},{split[3]},{split[4]}\n")
-                                        except:
-                                            pass
         file.close()
 
 
