@@ -1,5 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
+import json
+from difflib import SequenceMatcher
+
 
 """
 we're going to be scraping data from sites
@@ -58,7 +61,29 @@ class MeqasaScraper():
                 file.write('\n')
                 print("Wrote line to file")
 
+class JumiaScraper:
+    def __init__(self):
+        self.site = "https://deals.jumia.com.gh/studio-room-for-rent?page="
+        self.max_links = 4
+        self.page = None
+        self.data = []
+        self.flattened_data = []
+        self.temp = []
+        self.li_temp = []
+        self.keys = []
 
+    def scrape(self):
+        with open ('jumia_data.txt', 'w+') as file:
+            for i in range(1, self.max_links):
+                self.page = requests.get(self.site+f"{i}")
+                soup = BeautifulSoup(self.page.content, 'html.parser')
+
+                pages = soup.findAll(attrs={"id" : "search-results"})
+                #print(pages)
+
+                for i in json.loads(pages[0]['data-catalog-event'])['impressions']:
+                    file.write(f"{i['name']},{i['price']}\n")
+        file.close()
 
 class TonatonScraper():
     def __init__(self):
@@ -73,27 +98,74 @@ class TonatonScraper():
 
 
     def scrape_tonaton_urls(self):
-        for i in range(1, 2):
+        for i in range(1, 3):
             self.page = requests.get(self.site+f"{i}")
             soup = BeautifulSoup(self.page.content, 'html.parser')
 
-            pages = soup.find_all('script')
-            items = soup.find_all(lambda tag:tag.name=="script")
+            pages = soup.find_all(attrs={"data-testid":"ad-meta"})
 
-            for j in items:
-                print(j.text)
-                # for line in j.splitlines():
-                #     if line.split(':')[0].strip() in keys:
-                #         print(line.strip())
+            print(pages[0])
+
+class LocantoScraper:
+    def __init__(self):
+        self.site = "https://accra.locanto.com.gh/Flats-for-Rent/301/"
+        self.max_links = 5
+        self.page = None
+        self.data = []
+        self.flattened_data = []
+        self.temp = []
+        self.li_temp = []
+        self.keys = ['title', 'details', 'price', 'location']
+
+    def scrape(self):
+        with open('locanto_data.txt', 'w+', encoding='utf-8') as file:
+            with open('towns.csv') as towns:
+                towns_data = towns.readlines()
+                # for town_line in towns_data:
+                #     split = town_line.split(',')
+                #     town = split[0]
+                #     count = 0
+                #     for line in data:
+                #         if SequenceMatcher(None, town, line).ratio() >= 0.6:
+                #             stack.append(Item([split[1], split[3], split[4]]))
+                #             stack[-1].has_nodes = True
+                #             print(town, line)
+                for i in range(1, self.max_links):
+                    self.page = requests.get(self.site+f"{i}/")
+                    soup = BeautifulSoup(self.page.content, 'html.parser')
+
+                    pages = soup.find_all('div', class_="resultMain")
+
+                    for i in pages:
+                        for town_line in towns_data:
+                            split = town_line.split(',')
+                            current = BeautifulSoup(str(i), 'html.parser')
+                            name = current.find_all('a', class_="bp_ad__title_link")
+                            loc = current.find_all('div', class_="bp_ad__city")
+                            price = current.find_all('div', class_="bp_ad__price")
+
+                            for item in zip(name, loc, price):
+                                if SequenceMatcher(None, split[0], item[0].text).ratio() >= 0.6:
+                                    for i in item[0].text:
+                                        try:
+
+                                            file.write(f"1,{int(i)},{int(i)},{item[2].text.replace('GH₵','')},{split[3]},{split[4]}\n")
+                                        except:
+                                            pass
+        file.close()
 
 
-
+a = LocantoScraper()
+a.scrape()
 #property = soup.find_all('div', class_='one-featured-prop')
-
+# a = JumiaScraper()
+# a.scrape()
+# a = TonatonScraper()
+# a.scrape_tonaton_urls()
 #print(property)
-a = TonatonScraper()
-
-a.scrape_tonaton_urls()
+# a = TonatonScraper()
+#
+# a.scrape_tonaton_urls()
 # a.scrape_meqasa_urls()
 # a.write_data('data.txt', a.flattened_data)
 
